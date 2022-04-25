@@ -11,17 +11,16 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(referencedColumnName = "IDPERSONA")
 public class Docente extends Persona {
 
-    public Docente(Long idpersona, String codigoDocente, String curso) {
-        super(idpersona);
-        this.codigoDocente = codigoDocente;
-        this.curso = curso;
-    }
 
-    public Docente(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero, String codigoDocente, String curso) {
-        super(nombre, apellido, edad, dni, fechaNacimiento, genero);
-        this.codigoDocente = codigoDocente;
-        this.curso = curso;
-    }
+
+    @Column(name = "codigo_docente", length = 10,nullable = false)
+    private String codigoDocente;
+
+    @Column(name = "horas_asignadas", length = 20)
+    private Double horasAsignadas;
+
+    //getters and setters
+
 
     public String getCodigoDocente() {
         return codigoDocente;
@@ -31,18 +30,44 @@ public class Docente extends Persona {
         this.codigoDocente = codigoDocente;
     }
 
-    public String getCurso() {
-        return curso;
+    public Double getHorasAsignadas() {
+        return horasAsignadas;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public void setHorasAsignadas(Double horasAsignadas) {
+        this.horasAsignadas = horasAsignadas;
     }
 
-    @Column(name = "codigo_docente", length = 10,nullable = false)
-    private String codigoDocente;
+    //CONTRUCTORES
 
-    @Column(name = "curso", length = 10)
-    private String curso;
 
+    public Docente(String codigoDocente, Double horasAsignadas) {
+        this.codigoDocente = codigoDocente;
+        this.horasAsignadas = horasAsignadas;
+    }
+
+    public Docente(Long idpersona, String codigoDocente, Double horasAsignadas) {
+        super(idpersona);
+        this.codigoDocente = codigoDocente;
+        this.horasAsignadas = horasAsignadas;
+    }
+
+    public Docente(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero, String codigoDocente, Double horasAsignadas) {
+        super(nombre, apellido, edad, dni, fechaNacimiento, genero);
+        this.codigoDocente = codigoDocente;
+        this.horasAsignadas = horasAsignadas;
+    }
+
+    //CONSTRUCTOR VACIO
+
+    public Docente() {
+    }
+
+    public Docente(Long idpersona) {
+        super(idpersona);
+    }
+
+    public Docente(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero) {
+        super(nombre, apellido, edad, dni, fechaNacimiento, genero);
+    }
 }

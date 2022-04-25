@@ -1,7 +1,7 @@
 package edu.ilp.sysgailp.entity;
 
 import javax.persistence.*;
-import javax.xml.soap.Name;
+
 import java.util.Date;
 
 @Entity
@@ -18,8 +18,16 @@ public class Persona {
     @Column(name = "nombre", length = 100, nullable = false)
     private String nombre;
 
-
     private String apellido;
+    private  int edad;
+    private  String dni;
+
+    @Column(name = "fecha_nacimiento", length = 50)
+    private Date fechaNacimiento;
+
+    private String genero;
+
+    //Getters And Setters
 
     public Long getIdpersona() {
         return idpersona;
@@ -77,17 +85,8 @@ public class Persona {
         this.genero = genero;
     }
 
-    private int edad;
-    private String dni;
 
-    @Column(name = "fecha-nacimiento", length = 50)
-    private Date fechaNacimiento;
-
-    private String genero;
-
-    public Persona(Long idpersona) {
-        this.idpersona = idpersona;
-    }
+    //CONSTRUCTORES 1
 
     public Persona(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero) {
         this.nombre = nombre;
@@ -97,4 +96,22 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
     }
+
+
+    //CONST 2 VACIO
+
+    public Persona() {
+    }
+
+
+    //CONST 3
+
+    public Persona(Long idpersona) {
+        this.idpersona = idpersona;
+    }
+
+
+
+
+
 }
