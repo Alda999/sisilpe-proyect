@@ -1,24 +1,35 @@
 package edu.ilp.sysgailp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "escuela")
 public class Escuela {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idescuela;
 
-    @Column(name = "denominacion", length = 20)
-    private  String denominacion;
+    private String denominacion;
 
-    @Column(name = "codigo_escuela", length = 10)
-    private  String codigoEscuela;
+    private String codigoEscuela;
 
-    //GETTERS AND SETTERS
+    @OneToMany(mappedBy = "escuela")
+    private List<Estudiante> estudiantes;
 
+    public Escuela() {
+    }
+
+    public Escuela(Long idescuela) {
+        this.idescuela = idescuela;
+    }
+
+    public Escuela(Long idescuela, String denominacion, String codigoEscuela) {
+        this.idescuela = idescuela;
+        this.denominacion = denominacion;
+        this.codigoEscuela = codigoEscuela;
+    }
 
     public Long getIdescuela() {
         return idescuela;
@@ -42,22 +53,5 @@ public class Escuela {
 
     public void setCodigoEscuela(String codigoEscuela) {
         this.codigoEscuela = codigoEscuela;
-    }
-
-    //CONSTRUCTORES
-
-    public Escuela(Long idescuela, String denominacion, String codigoEscuela) {
-        this.idescuela = idescuela;
-        this.denominacion = denominacion;
-        this.codigoEscuela = codigoEscuela;
-    }
-    //CONST VACIO
-
-    public Escuela() {
-    }
-    //CONST
-
-    public Escuela(Long idescuela) {
-        this.idescuela = idescuela;
     }
 }
