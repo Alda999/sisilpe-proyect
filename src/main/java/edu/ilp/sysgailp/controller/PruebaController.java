@@ -1,11 +1,7 @@
 package edu.ilp.sysgailp.controller;
 
 import edu.ilp.sysgailp.entity.Escuela;
-import edu.ilp.sysgailp.entity.Estudiante;
-import edu.ilp.sysgailp.entity.Persona;
 import edu.ilp.sysgailp.service.IEscuelaService;
-import edu.ilp.sysgailp.service.IEstudianteService;
-import edu.ilp.sysgailp.service.IPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,35 +34,35 @@ public class PruebaController {
         return this.escuelaService.buscarEscuelaByIdAndDenominacion(idescuela, nombre);
     }
 
-    //LISTA PERSONAS
+    /*//LISTA PERSONAS
     @Autowired
     private IPersonaService personaService;
 
     @GetMapping("/listaPersonas")
     public List<Persona> listaPersonas(){
         return this.personaService.listarPersonas();
-    }
+    }*/
 
-    //PERSONA POR DNI:
+    /*//PERSONA POR DNI:
     @GetMapping("/retornarPersonaPorDni")
     public Persona retornarPersonaPorDni(@RequestParam String dni){
         return this.personaService.obtenerPersonaPorDni(dni);
-    }
+    }*/
 
-    //LISTAR ESTUDIANTE
+    /*//LISTAR ESTUDIANTE
     @Autowired
     private IEstudianteService estudianteService;
 
     @GetMapping("/listaEstudiantes")
     public List<Estudiante> listaEstudiantes(){
         return this.estudianteService.listarEstudiante();
-    }
+    }*/
 
-    //ESTUDIANTE POR CODIGO:
+    /*//ESTUDIANTE POR CODIGO:
     @GetMapping("/buscarEstudianteByCodigo")
     public Estudiante buscarEstudianteByCodigo(@RequestParam String codigo){
         return this.estudianteService.obtenerEstudiantePorCodigo(codigo);
-    }
+    }*/
 
 
 

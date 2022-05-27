@@ -5,6 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IPersonaDao extends JpaRepository<Persona,Long> {
 
-    //RETORNAR PERSONA POR DNI:
-    Persona findByDni(String dni);
+
 }

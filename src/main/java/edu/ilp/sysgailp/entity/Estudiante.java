@@ -14,7 +14,7 @@ public class Estudiante extends Persona {
     @Column(name = "serie", length = 10)
     private String serie;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Escuela escuela;
 
     public Estudiante() {

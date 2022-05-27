@@ -19,15 +19,29 @@ public class Persona {
     private String nombre;
 
     private String apellido;
-    private  int edad;
-    private  String dni;
+    private int edad;
+    private String dni;
 
     @Column(name = "fecha_nacimiento", length = 50)
     private Date fechaNacimiento;
 
     private String genero;
 
-    //Getters And Setters
+    public Persona() {
+    }
+
+    public Persona(Long idpersona) {
+        this.idpersona = idpersona;
+    }
+
+    public Persona(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.dni = dni;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+    }
 
     public Long getIdpersona() {
         return idpersona;
@@ -84,34 +98,5 @@ public class Persona {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-
-
-    //CONSTRUCTORES 1
-
-    public Persona(String nombre, String apellido, int edad, String dni, Date fechaNacimiento, String genero) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.dni = dni;
-        this.fechaNacimiento = fechaNacimiento;
-        this.genero = genero;
-    }
-
-
-    //CONST 2 VACIO
-
-    public Persona() {
-    }
-
-
-    //CONST 3
-
-    public Persona(Long idpersona) {
-        this.idpersona = idpersona;
-    }
-
-
-
-
 
 }
